@@ -23,5 +23,6 @@ umap-learn==0.5.5
 
 Instalation time: standart
 
+Trained used NVIDIA GPUS (A40 / A100)
 
 Adding code: in progress
