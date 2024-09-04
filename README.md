@@ -22,3 +22,6 @@ umap-learn==0.5.5
 
 
 Instalation time: standart
+
+
+Adding code: in progress
