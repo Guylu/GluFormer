@@ -90,16 +90,6 @@ dim_feedforward = config.dim_feedforward
 # Assuming the model and dataloader are already defined
 model = TransformerModel(vocab_size, n_embd, n_heads=config.n_heads, n_layers=config.n_layers, max_seq_length=25000,
                           dropout=config.dropout, dim_feedforward=dim_feedforward).to(device)
-print(f"num of parameters: {sum(p.numel() for p in model.parameters())}")
-wandb.log({"num of parameters": sum(p.numel() for p in model.parameters())})
-# move to all GPUs in dataparralele
-optimizer = optim.Adam(model.parameters(), lr=config.lr, weight_decay=config.weight_decay)
-scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=config.step_size, gamma=config.gamma)
-num_epochs = config.epochs
-# clear gpu memory
-gc.collect()
-torch.cuda.empty_cache()
-num_epochs = config.epochs
 
 # Model_peach-plasma-78.pt
 model.load_state_dict(torch.load(
