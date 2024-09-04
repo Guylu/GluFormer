@@ -158,7 +158,7 @@ for B in range(*NUM):
 
     distances = []
     generated_sequences = []
-    # Generate and plot CONTINUATIONS number of sequences
+    # Generate and plot 3 number of sequences
     for c in range(3):
         start_point = first_sample[:, :PRE].to(device)
         generated_sequence = start_point.clone()
@@ -182,7 +182,7 @@ for B in range(*NUM):
 
 # turn reals and generateds to dataframes with ids as index
 reals = pd.DataFrame(reals, index=ids)
-generateds = pd.DataFrame(np.vstack(generateds), index=np.repeat(ids, T))
+generateds = pd.DataFrame(np.vstack(generateds), index=np.repeat(ids, 3))
 times_ = pd.DataFrame(times_, index=ids)
 
 data = []
